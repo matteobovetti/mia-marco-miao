@@ -1,0 +1,22 @@
+[package]
+name = "mia-marco-miao"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+
+[dependencies]
+macroquad = { version = "0.4.16", features = ["audio"] }
+
+[lints.rust]
+unsafe_code = "warn"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+# Game code mixes integers and f32 constantly; these casts are intentional.
+cast_precision_loss = "allow"
+cast_possible_truncation = "allow"
+cast_sign_loss = "allow"
+
+[dev-dependencies]
+hound = "3.5.1"
